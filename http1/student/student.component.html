@@ -1,0 +1,48 @@
+ <div class='container-fluid'>
+            <div class='panel panel-danger'>
+                <div class='panel-heading'>
+                    <h4 align='center'>Student Todo</h4>
+                </div>
+
+                <div class='panel-body'>
+                    <table class='table'>
+                        <thead> 
+                            <tr>
+                                <td align='center'>ToDo ID</td>
+                                <td align='center'>ToDo Task</td>
+                                
+                            </tr>
+                        </thead>
+                        <tr *ngFor="let t of getstudent()">
+                            <td align='center'>{{t.id}}</td>
+                            <td align='center'>{{t.task}}</td> 
+                             <td align='center'>
+     <button  *ngIf=don class='btn btn-danger' (click)="confirm(t.id)">Delete</button>
+     
+                            </td> 
+ <button  *ngIf='did==t.id' class='btn btn-danger' (click)="delete(t.id)">Confirm</button>
+ <button  *ngIf='did==t.id' class='btn btn-danger' (click)="cancel()">Cancel</button>
+                                
+                       </tr>
+
+                        <tr *ngIf!=con>
+                            <td align='center'> <h1>{{todo.id}}</h1></td> 
+                            <td align='center'><h1>{{todo.task}}</h1> </td> 
+                            </tr>
+                              <tr *ngIf!=con>
+                     <td align='center'> <input type="text" [(ngModel)]="todo.id"/></td> 
+             <td align='center'> <input  type="text" [(ngModel)]="todo.task"/></td> 
+                        </tr>
+                        <tr *ngIf!=con>
+     <td align='center'><button class='btn btn-danger' (click) = 'addstudent()'>Save</button></td>
+     <td align='center'><button class='btn btn-danger' (click) = 'cancel()'>Cancel</button></td>
+                             </tr>
+    <div *ngIf=con align='right'><button class='btn btn-danger' (click) = 'ad()'>Add new</button></div>
+                      
+                    </table>
+                </div>
+            </div>
+        </div>
+         <h1 id = 'rom'>{{result}}</h1>
+         <h1>{{resultd}}</h1>
+ 
